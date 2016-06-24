@@ -43,3 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+    gem 'pg'
+end
+
+gem 'bootstrap-sass'
