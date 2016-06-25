@@ -53,3 +53,4 @@ group :production do
 end
 
 gem 'bootstrap-sass'
+gem 'simple_form'
