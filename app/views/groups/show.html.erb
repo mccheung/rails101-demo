@@ -4,6 +4,14 @@
     <% if @group.editable_by?( current_user ) %>
         <%= link_to "Edit", edit_group_path( @group ), class: "btn btn-primary pull-right" %>
     <% end %>
+
+    <% if current_user.present? %>
+        <% if current_user.is_member_of?(@group) %>
+            <%= link_to "Quit Group", quit_group_path( @group ), method: :post, class: "btn btn-danger" %>
+        <% else %>
+            <%= link_to "Join Group", join_group_path( @group ), method: :psot, class: "btn btn-info" %>
+        <% end %>
+    <% end %>
 </div>
 
 <h2><%= @group.title %></h2>
